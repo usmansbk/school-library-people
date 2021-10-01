@@ -1,6 +1,14 @@
-# Project Title
+# OOP school library
 
-Add a a project description
+Imagine that you are the librarian of OOP University, and you need a tool to record what books are in the library and who borrows them. The app that you will create will allow a you to:
+
+    - Add new students or teachers.
+
+    - Add new books.
+
+    - Save records of who borrowed a given book and when.
+
+And all of this will be built in a beautiful and well-organized way!
 
 ## Built With
 
@@ -20,12 +28,6 @@ To get a local copy up and running follow these simple example steps.
 - Clone or download this repo on your machine
 - Enter project directory
 
-### Run
-
-```rb
-irb main_file.rb
-```
-
 ## Authors
 
 👤 **Usman**
@@ -33,12 +35,6 @@ irb main_file.rb
 - GitHub: [@usmansbk](https://github.com/usmansbk)
 - Twitter: [@usmansbk](https://twitter.com/usmansbk)
 - LinkedIn: [Usman Suleiman Babakolo](https://linkedin.com/in/usmansbk)
-
-👤 **Tolib**
-
-- GitHub: [@toliboff](https://github.com/toliboff)
-- Twitter: [@toliboff](https://twitter.com/toliboff)
-- LinkedIn: [Tolibjon Tolibov](https://linkedin.com/in/toliboff)
 
 ## 🤝 Contributing
 
