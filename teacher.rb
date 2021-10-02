@@ -10,7 +10,7 @@ class Teacher < Person
     true
   end
 
-  def to_str
+  def to_s
     "[Teacher] " + super
   end
 end

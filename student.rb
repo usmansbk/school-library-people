@@ -17,7 +17,7 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 
-  def to_str
+  def to_s
     "[Student] " + super
   end
 end

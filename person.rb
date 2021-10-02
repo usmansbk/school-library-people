@@ -26,7 +26,7 @@ class Person
     @age >= 18
   end
 
-  def to_str
+  def to_s
     "Name: #{@name}, ID: #{@id}, Age: #{@age}"
   end
 end
