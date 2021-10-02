@@ -148,11 +148,9 @@ class App
     print "ID of person: "
     id = gets.chomp
 
-    person = @people.detect { |person| person.id == id }
-    puts person
+    person = @people.find { |person| person.id == id.to_i }
 
     puts "Rentals:"
-
     if !person.nil?
       person.rentals.each { |rental| puts rental }
     end
