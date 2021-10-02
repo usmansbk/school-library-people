@@ -10,6 +10,7 @@ class App
 
     @people = []
     @books = []
+    @rentals = []
   end
 
   def run
