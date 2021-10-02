@@ -23,7 +23,7 @@ class App
 
       if option == '7'
         persistor = Persistor.new
-        persistor.persist(people: @people)
+        persistor.persist(people: @people, books: @books, rentals: @rentals)
         break
       end
 
