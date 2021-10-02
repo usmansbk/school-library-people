@@ -12,7 +12,7 @@ class App
     persistor.hydrate(@classroom)
     @people = persistor['people']
     @books = persistor['books']
-    @rentals = persistor['rentals'] 
+    @rentals = persistor['rentals']
   end
 
   def run
