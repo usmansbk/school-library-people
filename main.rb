@@ -60,11 +60,19 @@ class App
   end
   
   def list_books
-    @books.each { |book| puts book }
+    if @books.length > 0
+      @books.each { |book| puts book }
+    else
+      puts "You haven't added any book"
+    end
   end
 
   def list_people
-    @people.each { |person| puts person }
+    if @people.length > 0
+      @people.each { |person| puts person }
+    else
+      puts "You haven't added any person"
+    end
   end
 
   def create_person
@@ -126,6 +134,12 @@ class App
   end
 
   def create_rental
+    if @books.length > 0
+      puts "Select a book from the following list by number"
+      @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
+    else
+      puts "No books to rent out"
+    end
   end
 
   def list_rentals_by_person_id
