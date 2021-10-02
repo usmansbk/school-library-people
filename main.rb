@@ -67,7 +67,7 @@ class App
   end
 
   def create_person
-    print "Do you want to create a student (1) or a teacher (2)? [Input the number]:"
+    print "Do you want to create a student (1) or a teacher (2)? [Input the number]: "
     option = gets.chomp
 
     case option
@@ -128,21 +128,34 @@ class App
     puts "Select a book from the following list by number"
     @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
 
-    book = gets.chomp
+    book_idx = gets.chomp.to_i
 
+    puts
     puts "Select a person from the following list by number (not id)"
     @people.each_with_index { |person, idx| puts "#{idx}) #{person}"}
 
-    person = gets.chomp
+    person_idx = gets.chomp.to_i
 
+    puts
     print "Date: "
     date = gets.chomp
 
-    Rental.new(date, @books[book], @people[person])
+    Rental.new(date, @books[book_idx], @people[person_idx])
     puts "Rental created successfully"
   end
 
   def list_rentals_by_person_id
+    print "ID of person: "
+    id = gets.chomp
+
+    person = @people.detect { |person| person.id == id }
+    puts person
+
+    puts "Rentals:"
+
+    if !person.nil?
+      person.rentals.each { |rental| puts rental }
+    end
   end
 
 end
