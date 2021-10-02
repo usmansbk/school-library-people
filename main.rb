@@ -9,7 +9,7 @@ class App
     @classroom = Classroom.new('Microverse 2.0')
 
     persistor = Persistor.new
-    persistor.hydrate
+    persistor.hydrate(@classroom)
     @people = []
     @books = []
     @rentals = []
