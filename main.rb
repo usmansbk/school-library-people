@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require_relative 'person'
-require_relative 'teacher'
-require_relative 'student'
-require_relative 'book'
-require_relative 'rental'
-require_relative 'classroom'
+require_relative "person"
+require_relative "teacher"
+require_relative "student"
+require_relative "book"
+require_relative "rental"
+require_relative "classroom"
 
 class App
   def initialize
@@ -26,12 +26,12 @@ class App
     option = gets.chomp
 
     case option
-    when '1'
+    when "1"
       create_student
-    when '2'
+    when "2"
       create_teacher
     else
-      puts 'That is not a valid input'
+      puts "That is not a valid input"
       return
     end
 
@@ -59,19 +59,19 @@ class App
       option = gets.chomp 
 
       case option
-      when '1'
+      when "1"
         list_books
-      when '2'
+      when "2"
         list_people
-      when '3'
+      when "3"
         create_person_type
-      when '4'
+      when "4"
         create_book
-      when '5'
+      when "5"
         create_rental
-      when '6'
+      when "6"
         list_rentals_by_person_id
-      when '7'
+      when "7"
         break
       else
         puts "That is not a valid option"
@@ -96,27 +96,27 @@ class App
   end
 
   def create_student
-    print 'Age: '
+    print "Age: "
     age = gets.chomp
 
-    print 'Name: '
+    print "Name: "
     name = gets.chomp
 
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y'
+    print "Has parent permission? [Y/N]: "
+    parent_permission = gets.chomp.downcase == "y"
 
     student = Student.new(name: name, age: age, parent_permission: parent_permission, classroom: @classroom)
     @people.push(student)
   end
 
   def create_teacher
-    print 'Age: '
+    print "Age: "
     age = gets.chomp
 
-    print 'Name: '
+    print "Name: "
     name = gets.chomp
 
-    print 'Specialization: '
+    print "Specialization: "
     specialization = gets.chomp
 
     teacher = Teacher.new(name: name, age: age, specialization: specialization)
