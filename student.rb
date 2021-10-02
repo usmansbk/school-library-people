@@ -1,9 +1,9 @@
-require_relative "person"
+require_relative 'person'
 
 class Student < Person
   attr_reader :classroom
 
-  def initialize(name: "Unknown", age:, parent_permission: true, classroom:)
+  def initialize(name: 'Unknown', age:, parent_permission: true, classroom:)
     super(name: name, age: age, parent_permission: parent_permission)
     @classroom = classroom
   end
@@ -14,11 +14,11 @@ class Student < Person
   end
 
   def play_hooky
-    "¯\(ツ)/¯"
+    '¯\(ツ)/¯'
   end
 
   def to_s
-    "[Student] " + super
+    '[Student] ' + super
   end
 end
   

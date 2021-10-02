@@ -1,10 +1,10 @@
-require_relative "corrector"
+require_relative 'corrector'
 
 class Person
   attr_accessor :name, :age
   attr_reader :id, :rentals
 
-  def initialize(name: "Unknown", age:, parent_permission: true)
+  def initialize(name: 'Unknown', age:, parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -27,6 +27,6 @@ class Person
   end
 
   def to_s
-    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
+    'Name: #{@name}, ID: #{@id}, Age: #{@age}'
   end
 end
