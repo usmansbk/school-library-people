@@ -12,7 +12,6 @@ class App
     @classroom = Classroom.new("Microverse 2.0")
     @people = []
     @books = []
-    @rentals = []
   end
 
   def run
@@ -60,19 +59,11 @@ class App
   end
   
   def list_books
-    if @books.length > 0
-      @books.each { |book| puts book }
-    else
-      puts "You haven't added any book"
-    end
+    @books.each { |book| puts book }
   end
 
   def list_people
-    if @people.length > 0
-      @people.each { |person| puts person }
-    else
-      puts "You haven't added any person"
-    end
+    @people.each { |person| puts person }
   end
 
   def create_person
@@ -134,12 +125,21 @@ class App
   end
 
   def create_rental
-    if @books.length > 0
-      puts "Select a book from the following list by number"
-      @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
-    else
-      puts "No books to rent out"
-    end
+    puts "Select a book from the following list by number"
+    @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
+
+    book = gets.chomp
+
+    puts "Select a person from the following list by number (not id)"
+    @people.each_with_index { |person, idx| puts "#{idx}) #{person}"}
+
+    person = gets.chomp
+
+    print "Date: "
+    date = gets.chomp
+
+    Rental.new(date, @books[book], @people[person])
+    puts "Rental created successfully"
   end
 
   def list_rentals_by_person_id
