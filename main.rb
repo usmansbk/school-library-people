@@ -5,8 +5,16 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'book'
 require_relative 'rental'
+require_relative 'classroom'
 
 class App
+  def initialize
+    @classroom = Classroom.new("Microverse 2.0")
+    @people = []
+    @books = []
+    @rentals = []
+  end
+
   def list_books
   end
 
@@ -26,7 +34,10 @@ class App
       name = gets.chomp
 
       print 'Has parent permission? [Y/N]: '
-      parent_permission = gets.chomp.downcase
+      parent_permission = gets.chomp.downcase == 'y'
+
+      student = Student.new(name: name, age: age, parent_permission: parent_permission, :classroom: @classroom)
+      @people.push(student)
 
       puts "Person created successfully"
     when '2'
