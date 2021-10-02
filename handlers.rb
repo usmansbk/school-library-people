@@ -87,7 +87,9 @@ module Handlers
     print 'Date: '
     date = gets.chomp
 
-    Rental.new(date, @books[book_idx], @people[person_idx])
+    rental = Rental.new(date, @books[book_idx], @people[person_idx])
+    @rentals.push(rental)
+
     puts 'Rental created successfully'
   end
 
@@ -95,10 +97,8 @@ module Handlers
     print 'ID of person: '
     id = gets.chomp
 
-    person = @people.find { |current_person| current_person.id == id.to_i }
-
     puts 'Rentals:'
-    rentals = person&.rentals
-    rentals&.each { |rental| puts rental }
+
+    @rentals.each { |rental| puts rental if rental.person.id == id.to_i }
   end
 end

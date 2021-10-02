@@ -8,6 +8,7 @@ class App
     @classroom = Classroom.new('Microverse 2.0')
     @people = []
     @books = []
+    @rentals = []
   end
 
   def run
