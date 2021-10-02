@@ -8,6 +8,26 @@ class App
   end
 
   def create_person_type
+    print "Do you want to create a student (1) or a teacher (2)? [Input the number]:"
+    option = gets.chomp
+
+    case option
+    when '1'
+      print 'Age: '
+      age = gets.chomp
+
+      print 'Name: '
+      name = gets.chomp
+
+      print 'Has parent permission? [Y/N]: '
+      parent_permission = gets.chomp.downcase
+
+      puts "Person created successfully"
+    when '2'
+      puts 'teacher'
+    else
+      puts 'That is not a valid input'
+    end
   end
 
   def create_book
