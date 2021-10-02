@@ -60,9 +60,11 @@ class App
   end
   
   def list_books
+    @books.each { |book| => puts book }
   end
 
   def list_people
+    @people.each { |person| => puts person }
   end
 
   def create_person
