@@ -8,6 +8,8 @@ class App
   def initialize
     @classroom = Classroom.new('Microverse 2.0')
 
+    persistor = Persistor.new
+    persistor.hydrate
     @people = []
     @books = []
     @rentals = []

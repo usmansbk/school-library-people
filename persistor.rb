@@ -5,10 +5,6 @@ class Persistor
     people_json = File.read('people.json')
     books_json = File.read('books.json')
     rentals_json = File.read('rentals.json')
-
-    puts people_json
-    puts rentals_json
-    puts books_json
   end
 
   def persist(people:, rentals:, books:)
