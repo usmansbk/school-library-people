@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require_relative 'person'
 require_relative 'teacher'
 require_relative 'student'
