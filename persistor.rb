@@ -6,8 +6,8 @@ class Persistor
     books_json = JSON.generate(books)
     rentals_json = JSON.generate(rentals)
 
-    puts people_json
-    puts books_json
-    puts rentals_json
+    File.open("people.json", "w") { |f| f.write people_json }
+    File.open("books.json", "w") { |f| f.write books_json }
+    File.open("rentals.json", "w") { |f| f.write rentals_json }
   end
 end
