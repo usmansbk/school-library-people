@@ -57,7 +57,7 @@ class App
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
   end
- 
+
   def list_books
     @books.each { |book| puts book }
   end
@@ -151,11 +151,8 @@ class App
     person = @people.find { |current_person| current_person.id == id.to_i }
 
     puts 'Rentals:'
-    if !person.nil?
-      person.rentals.each { |rental| puts rental }
-    end
+    person&.rentals.each { |rental| puts rental }
   end
-
 end
 
 def main
