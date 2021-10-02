@@ -13,4 +13,14 @@ class Teacher < Person
   def to_s
     "[Teacher] #{super}"
   end
+
+  def to_json(*args)
+    {
+      'type' => self.class.name,
+      'id' => @id,
+      'name' => @name,
+      'age' => @age,
+      'specialization' => @specialization
+    }.to_json(*args)
+  end
 end
