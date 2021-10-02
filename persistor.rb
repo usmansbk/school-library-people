@@ -4,6 +4,6 @@ class Persist
   def hydrate
   end
 
-  def persist(people:, books:)
+  def persist(people:, books:, rentals:)
   end
 end
