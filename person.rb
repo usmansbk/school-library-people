@@ -25,4 +25,8 @@ class Person
   def is_of_age?
     @age >= 18
   end
+
+  def to_str
+    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
+  end
 end
