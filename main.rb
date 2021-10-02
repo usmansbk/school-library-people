@@ -32,7 +32,17 @@ class App
 
       case option
       when '1'
-        puts option
+        list_books
+      when '2'
+        list_people
+      when '3'
+        create_person_type
+      when '4'
+        create_book
+      when '5'
+        create_rental
+      when '6'
+        list_rentals_by_person_id
       when '7'
         break
       else
