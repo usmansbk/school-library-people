@@ -15,42 +15,6 @@ class App
     @rentals = []
   end
 
-  def list_books
-  end
-
-  def list_people
-  end
-
-  def create_person_type
-    print "Do you want to create a student (1) or a teacher (2)? [Input the number]:"
-    option = gets.chomp
-
-    case option
-    when "1"
-      create_student
-    when "2"
-      create_teacher
-    else
-      puts "That is not a valid input"
-      return
-    end
-
-    puts "Person created successfully"
-  end
-
-  def create_book
-  end
-
-  def create_rental
-  end
-
-  def list_rentals_by_person_id
-  end
-
-  def print_welcome
-    puts
-  end
-
   def run
     puts "Welcome to School Library App!"
 
@@ -64,7 +28,7 @@ class App
       when "2"
         list_people
       when "3"
-        create_person_type
+        create_person
       when "4"
         create_book
       when "5"
@@ -94,6 +58,29 @@ class App
     puts "6 - List all rentals for a given person id"
     puts "7 - Exit"
   end
+  
+  def list_books
+  end
+
+  def list_people
+  end
+
+  def create_person
+    print "Do you want to create a student (1) or a teacher (2)? [Input the number]:"
+    option = gets.chomp
+
+    case option
+    when "1"
+      create_student
+    when "2"
+      create_teacher
+    else
+      puts "That is not a valid input"
+      return
+    end
+
+    puts "Person created successfully"
+  end
 
   def create_student
     print "Age: "
@@ -122,6 +109,26 @@ class App
     teacher = Teacher.new(name: name, age: age, specialization: specialization)
     @people.push(teacher)
   end
+
+  def create_book
+    print "Title: "
+    title = gets.chomp
+
+    print "Author: "
+    author = gets.chomp
+
+    book = Book.new(title, author)
+    @books.push(book)
+
+    puts "Book created successfully"
+  end
+
+  def create_rental
+  end
+
+  def list_rentals_by_person_id
+  end
+
 end
 
 def main
