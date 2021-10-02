@@ -1,9 +1,9 @@
 require 'json'
 
-class Persist
-  def hydrate
-  end
+class Persistor
+  def persist(people:)
+    json = JSON.generate(people)
 
-  def persist(people:, books:, rentals:)
+    puts json
   end
 end

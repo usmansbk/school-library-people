@@ -2,7 +2,7 @@ require_relative 'corrector'
 
 class Person
   attr_accessor :name, :age
-  attr_reader :id, :rentals
+  attr_reader :id, :rentals, :parent_permission
 
   def initialize(age:, parent_permission: true, name: 'Unknown')
     @id = Random.rand(1..1000)
@@ -29,5 +29,14 @@ class Person
 
   def to_s
     "Name: #{@name}, ID: #{@id}, Age: #{@age}"
+  end
+
+  def to_json(*args)
+    {
+      'id' => @id,
+      'name' => @name,
+      'age' => @age,
+      'parent_permission' => @parent_permission
+    }.to_json(*args)
   end
 end
