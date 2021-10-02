@@ -10,6 +10,7 @@ class App
     @classroom = Classroom.new('Microverse 2.0')
     @people = []
     @books = []
+    @rentals = []
   end
 
   def run
@@ -143,7 +144,9 @@ class App
     print 'Date: '
     date = gets.chomp
 
-    Rental.new(date, @books[book_idx], @people[person_idx])
+    rental = Rental.new(date, @books[book_idx], @people[person_idx])
+    @rentals.push(rental)
+
     puts 'Rental created successfully'
   end
 
@@ -151,11 +154,9 @@ class App
     print 'ID of person: '
     id = gets.chomp
 
-    person = @people.find { |current_person| current_person.id == id.to_i }
-
     puts 'Rentals:'
-    rentals = person&.rentals
-    rentals&.each { |rental| puts rental }
+
+    @rentals.each { |rental| puts rental if rental.person.id == id.to_i }
   end
 end
 
