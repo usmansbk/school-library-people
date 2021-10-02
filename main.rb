@@ -10,7 +10,7 @@ class App
 
     persistor = Persistor.new
     persistor.hydrate(@classroom)
-    @people = persistor['people'] 
+    @people = persistor['people']
     @books = persistor['books']
     @rentals = persistor['rentals'] 
   end
