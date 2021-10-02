@@ -151,7 +151,8 @@ class App
     person = @people.find { |current_person| current_person.id == id.to_i }
 
     puts 'Rentals:'
-    person&.rentals.each { |rental| puts rental }
+    rentals = person&.rentals
+    rentals&.each { |rental| puts rental }
   end
 end
 
