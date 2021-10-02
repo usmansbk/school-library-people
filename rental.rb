@@ -19,7 +19,7 @@ class Rental
   def to_json(*args)
     {
       'date' => @date,
-      'book_id' => @book.id,
+      'book' => @book,
       'person_id' => @person.id
     }.to_json(*args)
   end
