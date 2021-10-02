@@ -27,29 +27,9 @@ class App
 
     case option
     when '1'
-      print 'Age: '
-      age = gets.chomp
-
-      print 'Name: '
-      name = gets.chomp
-
-      print 'Has parent permission? [Y/N]: '
-      parent_permission = gets.chomp.downcase == 'y'
-
-      student = Student.new(name: name, age: age, parent_permission: parent_permission, classroom: @classroom)
-      @people.push(student)
+      create_student
     when '2'
-      print 'Age: '
-      age = gets.chomp
-
-      print 'Name: '
-      name = gets.chomp
-
-      print 'Specialization: '
-      specialization = gets.chomp
-
-      teacher = Teacher.new(name: name, age: age, specialization: specialization)
-      @people.push(teacher)
+      create_teacher
     else
       puts 'That is not a valid input'
       return
@@ -113,6 +93,34 @@ class App
     puts "5 - Create a rental"
     puts "6 - List all rentals for a given person id"
     puts "7 - Exit"
+  end
+
+  def create_student
+    print 'Age: '
+    age = gets.chomp
+
+    print 'Name: '
+    name = gets.chomp
+
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase == 'y'
+
+    student = Student.new(name: name, age: age, parent_permission: parent_permission, classroom: @classroom)
+    @people.push(student)
+  end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp
+
+    print 'Name: '
+    name = gets.chomp
+
+    print 'Specialization: '
+    specialization = gets.chomp
+
+    teacher = Teacher.new(name: name, age: age, specialization: specialization)
+    @people.push(teacher)
   end
 end
 
