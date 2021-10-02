@@ -19,7 +19,7 @@ class App
 
     loop do
       print_options
-      option = gets.chomp 
+      option = gets.chomp
 
       case option
       when '1'
@@ -57,7 +57,7 @@ class App
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
   end
-  
+ 
   def list_books
     @books.each { |book| puts book }
   end
@@ -126,13 +126,13 @@ class App
 
   def create_rental
     puts 'Select a book from the following list by number'
-    @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
+    @books.each_with_index { |book, idx| puts "#{idx}) #{book}" }
 
     book_idx = gets.chomp.to_i
 
     puts
     puts 'Select a person from the following list by number (not id)'
-    @people.each_with_index { |person, idx| puts "#{idx}) #{person}"}
+    @people.each_with_index { |person, idx| puts "#{idx}) #{person}" }
 
     person_idx = gets.chomp.to_i
 
@@ -148,7 +148,7 @@ class App
     print 'ID of person: '
     id = gets.chomp
 
-    person = @people.find { |person| person.id == id.to_i }
+    person = @people.find { |current_person| current_person.id == id.to_i }
 
     puts 'Rentals:'
     if !person.nil?
