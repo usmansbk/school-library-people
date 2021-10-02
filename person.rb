@@ -27,6 +27,6 @@ class Person
   end
 
   def to_s
-    'Name: #{@name}, ID: #{@id}, Age: #{@age}'
+    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
   end
 end

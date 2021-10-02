@@ -18,7 +18,7 @@ class Student < Person
   end
 
   def to_s
-    '[Student] ' + super
+    "[Student] #{super}"
   end
 end
   

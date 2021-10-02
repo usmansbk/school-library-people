@@ -17,7 +17,7 @@ class App
   def run
     puts 'Welcome to School Library App!'
 
-    loop do 
+    loop do
       print_options
       option = gets.chomp 
 
@@ -126,13 +126,13 @@ class App
 
   def create_rental
     puts 'Select a book from the following list by number'
-    @books.each_with_index { |book, idx| puts '#{idx}) #{book}'}
+    @books.each_with_index { |book, idx| puts "#{idx}) #{book}"}
 
     book_idx = gets.chomp.to_i
 
     puts
     puts 'Select a person from the following list by number (not id)'
-    @people.each_with_index { |person, idx| puts '#{idx}) #{person}'}
+    @people.each_with_index { |person, idx| puts "#{idx}) #{person}"}
 
     person_idx = gets.chomp.to_i
 
