@@ -16,11 +16,11 @@ class Teacher < Person
 
   def to_json(*args)
     {
-      'type' => self.class.name,
-      'id' => @id,
-      'name' => @name,
-      'age' => @age,
-      'specialization' => @specialization
+      JSON.create_id => self.class.name,
+      'id' => id,
+      'name' => name,
+      'age' => age,
+      'specialization' => specialization
     }.to_json(*args)
   end
 end
