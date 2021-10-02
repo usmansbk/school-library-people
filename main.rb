@@ -25,25 +25,25 @@ class App
 
   def run
     puts "Welcome to School Library App!"
-    print_options
-    option = get_option ['1', '2', '3', '4', '5', '6', '7']
 
-    while option != '7'
+    loop do 
       print_options
-      option = get_option ['1', '2', '3', '4', '5', '6', '7']
+      option = gets.chomp 
+
+      case option
+      when '1'
+        puts option
+      when '7'
+        break
+      else
+        puts "That is not a valid option"
+      end
     end
+
+    puts "Thank you for using this app!"
   end
 
   private
-
-  def get_option options
-    option = gets.chomp
-    while !options.include? option
-      puts "Invalid option. Valid options are #{options}"
-      option = gets.chomp
-    end
-    option
-  end
 
   def print_options
     puts
