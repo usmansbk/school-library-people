@@ -10,9 +10,9 @@ class App
 
     persistor = Persistor.new
     persistor.hydrate(@classroom)
-    @people = []
-    @books = []
-    @rentals = []
+    @people = persistor['people'] 
+    @books = persistor['books']
+    @rentals = persistor['rentals'] 
   end
 
   def run
