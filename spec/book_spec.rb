@@ -12,7 +12,7 @@ describe Book do
   end
 
   describe '#rentals' do
-    it "returns a has-many Rental relationship" do
+    it 'returns a has-many Rental relationship' do
       expect(@book).to have_attributes("rentals" => [])
     end
   end
@@ -26,6 +26,12 @@ describe Book do
   describe '#title' do
     it 'returns the correct title' do
       expect(@book.title).to eq 'Lord of the rings'
+    end
+  end
+
+  describe '#to_s' do
+    it 'returns a formatted string' do
+      expect(@book.to_s).to eq 'Title: "Lord of the rings", Author: Tolkien'
     end
   end
 end
