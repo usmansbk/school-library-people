@@ -9,10 +9,11 @@ class App
     @classroom = Classroom.new('Microverse 2.0')
 
     persistor = Persistor.new
-    persistor.hydrate(@classroom)
-    @people = persistor['people']
-    @books = persistor['books']
-    @rentals = persistor['rentals']
+    data = persistor.hydrate(@classroom)
+
+    @people = data['people']
+    @books = data['books']
+    @rentals = data['rentals']
   end
 
   def run

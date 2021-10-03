@@ -21,6 +21,6 @@ class Book
   end
 
   def self.json_create(object)
-    new(title: object['title'], author: object['author'])
+    new(object['title'], object['author'])
   end
 end

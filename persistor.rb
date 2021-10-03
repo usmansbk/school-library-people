@@ -7,11 +7,7 @@ class Persistor
     rentals_json = File.read('rentals.json')
 
     books = JSON.parse(books_json, create_additions: true)
-    people = JSON.parse(people_json).map do |json|
-    end
-    rentals = JSON.parse(rentals)
 
-    puts people
     {
       'people' => [],
       'rentals' => [],
