@@ -1,13 +1,21 @@
 require 'json'
 
 class Persistor
-  def hydrate
+  def hydrate(classroom)
     people_json = File.read('people.json')
     books_json = File.read('books.json')
     rentals_json = File.read('rentals.json')
 
     people = JSON.parse(people_json, create_additions: true)
+    books = JSON.parse(books_json, create_additions: true)
+    rentals = JSON.parse(rentals)
+
     puts people
+    {
+      'people' => [],
+      'rentals' => [],
+      'books' => []
+    }
   end
 
   def persist(people:, rentals:, books:)

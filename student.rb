@@ -30,4 +30,8 @@ class Student < Person
       'parent_permission' => parent_permission
     }.to_json(*args)
   end
+
+  def self.json_create(object)
+    new(name: object['name'], age: object['age'], parent_permission: object['parent_permission'], classroom: nil)
+  end
 end
