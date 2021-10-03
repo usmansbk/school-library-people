@@ -2,7 +2,7 @@ require 'json'
 
 class Persistor
   def hydrate(classroom)
-    books = parse_books 
+    books = parse_books
     people = parse_people(classroom)
     rentals = parse_rentals(people, books)
 
@@ -16,7 +16,7 @@ class Persistor
   def parse_books
     file = 'books.json'
 
-    if !File.exists? file
+    if !File.exist? file
       []
     else
       JSON.parse(File.read(file), create_additions: true)
@@ -26,12 +26,12 @@ class Persistor
   def parse_rentals(people, books)
     file = 'rentals.json'
 
-    if !File.exists? file
+    if !File.exist? file
       []
     else
       JSON.parse(File.read(file)).map do |rental_json|
-        book = books.find { |book| book.title == rental_json['book_title'] }
-        person = people.find { |person| person.id == rental_json['person_id'].to_i }
+        book = books.find { |current_book| current_book.title == rental_json['book_title'] }
+        person = people.find { |current_person| current_person.id == rental_json['person_id'].to_i }
 
         Rental.new(rental_json['date'], book, person)
       end
@@ -41,8 +41,8 @@ class Persistor
   def parse_people(classroom)
     file = 'people.json'
 
-    if !File.exists? file
-      return []
+    if !File.exist? file
+      []
     else
       JSON.parse(File.read(file)).map do |person_json|
         id = person_json['id'].to_i
