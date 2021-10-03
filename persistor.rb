@@ -8,12 +8,22 @@ class Persistor
 
     books = JSON.parse(books_json, create_additions: true)
     people = parse_people(people_json, classroom)
+    rentals = parse_rentals(rentals_json, people, books)
 
     {
       'people' => people,
-      'rentals' => [],
-      'books' => books 
+      'books' => books,
+      'rentals' => rentals
     }
+  end
+
+  def parse_rentals(rentals_json, people, books)
+    JSON.parse(rentals_json).map do |rental_json|
+      book = books.find { |book| book.title == rental_json['book_title'] }
+      person = people.find { |person| person.id == rental_json['person_id'].to_i }
+
+      Rental.new(rental_json['date'], book, person)
+    end
   end
 
   def parse_people(people_json, classroom)
