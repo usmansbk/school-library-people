@@ -12,8 +12,8 @@ describe Book do
   end
 
   describe '#rentals' do
-    it "returns the list of rentals" do
-      expect(@book.rentals).to eq []
+    it "returns a has-many Rental relationship" do
+      expect(@book).to have_attributes("rentals" => [])
     end
   end
 
