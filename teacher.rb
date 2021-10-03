@@ -23,8 +23,4 @@ class Teacher < Person
       'specialization' => specialization
     }.to_json(*args)
   end
-
-  def self.json_create(object)
-    new(name: object['name'], age: object['age'], specialization: object['specialization'])
-  end
 end
