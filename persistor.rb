@@ -7,12 +7,33 @@ class Persistor
     rentals_json = File.read('rentals.json')
 
     books = JSON.parse(books_json, create_additions: true)
+    people = parse_people(people_json, classroom)
 
     {
-      'people' => [],
+      'people' => people,
       'rentals' => [],
       'books' => books 
     }
+  end
+
+  def parse_people(people_json, classroom)
+    JSON.parse(people_json).map do |person_json|
+      id = person_json['id'].to_i
+      name = person_json['name']
+      age = person_json['age']
+
+      if person_json['json_class'] == 'Student'
+        parent_permission = person_json['parent_permission']
+        student = Student.new(name: name, age: age, parent_permission: parent_permission, classroom: classroom)
+        student.id = id
+        student
+      else
+        specialization = person_json['specialization']
+        teacher = Teacher.new(name: name, age: age, specialization: specialization)
+        teacher.id = id
+        teacher
+      end
+    end
   end
 
   def persist(people:, rentals:, books:)
