@@ -13,7 +13,7 @@ describe Corrector do
     end
 
     context "with more than 10 characters" do
-      it "returns a name at most 10 characters long" do
+      it "returns a name 10 characters long" do
         expect(@corrector.correct_name "usman suleiman").to eq "Usman sule" 
       end
     end
