@@ -25,11 +25,11 @@ describe Person do
     context 'with all parameters' do
       person = Person.new(name: 'Rose', age: '17', parent_permission: false)
 
-      it 'returns a Person object' do
+      it 'takes 3 parameters and returns a Person object' do
         expect(person).to be_an_instance_of Person 
       end
 
-      it 'should have an Unknown name' do
+      it 'should set the correct name' do
         expect(person.name).to eq 'Rose' 
       end
 
