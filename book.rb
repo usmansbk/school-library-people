@@ -7,4 +7,8 @@ class Book
     @author = author
     @rentals = []
   end
+
+  def to_s
+    "Title: \"#{@title}\", Author: #{author}"
+  end
 end

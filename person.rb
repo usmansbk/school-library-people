@@ -4,7 +4,7 @@ class Person
   attr_accessor :name, :age
   attr_reader :id, :rentals
 
-  def initialize(age:, name: 'Unknown', parent_permission: true)
+  def initialize(age:, parent_permission: true, name: 'Unknown')
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -25,5 +25,9 @@ class Person
 
   def of_age?
     @age >= 18
+  end
+
+  def to_s
+    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
   end
 end
