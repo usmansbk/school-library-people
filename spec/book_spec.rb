@@ -34,4 +34,10 @@ describe Book do
       expect(@book.to_s).to eq 'Title: "Lord of the rings", Author: Tolkien'
     end
   end
+
+  describe '#to_json' do
+    it 'returns a json string of the book' do
+      expect(JSON.generate(@book)).to eq '{"json_class":"Book","title":"Lord of the rings","author":"Tolkien"}'
+    end
+  end
 end
