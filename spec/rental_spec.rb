@@ -22,5 +22,11 @@ describe Rental do
     it 'should set the correct book' do
       expect(rental.book).to eq book
     end
+
+    context '#person' do
+      it 'should have the correct rental' do
+        expect(person.rentals).to include(rental)
+      end
+    end
   end
 end
