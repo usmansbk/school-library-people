@@ -7,7 +7,6 @@ class App
 
   def initialize
     @classroom = Classroom.new('Microverse 2.0')
-
     persistor = Persistor.new
     data = persistor.hydrate(@classroom)
 
