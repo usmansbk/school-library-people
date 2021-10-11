@@ -1,14 +1,18 @@
 require_relative 'classroom'
 require_relative 'handlers'
+require_relative 'persistor'
 
 class App
   include Handlers
 
   def initialize
     @classroom = Classroom.new('Microverse 2.0')
-    @people = []
-    @books = []
-    @rentals = []
+    persistor = Persistor.new
+    data = persistor.hydrate(@classroom)
+
+    @people = data['people']
+    @books = data['books']
+    @rentals = data['rentals']
   end
 
   def run
@@ -19,7 +23,11 @@ class App
 
       option = gets.chomp
 
-      break if option == '7'
+      if option == '7'
+        persistor = Persistor.new
+        persistor.persist(people: @people, books: @books, rentals: @rentals)
+        break
+      end
 
       handle_option option
     end
