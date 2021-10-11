@@ -2,12 +2,12 @@ require_relative 'spec_helper'
 
 describe Person do
   before :each do
-    @person = Person.new(age: "17", name: "Roseling gandalf the gray")
+    @person = Person.new(age: 17, name: "Roseling gandalf the gray")
   end
 
   describe '#new' do
     context 'with only age' do
-      person = Person.new(age: "17")
+      person = Person.new(age: 17)
 
       it 'returns a Person object' do
         expect(person).to be_an_instance_of Person 
@@ -23,7 +23,7 @@ describe Person do
     end
 
     context 'with all parameters' do
-      person = Person.new(name: 'Rose', age: '17', parent_permission: false)
+      person = Person.new(name: 'Rose', age: 17, parent_permission: false)
 
       it 'takes 3 parameters and returns a Person object' do
         expect(person).to be_an_instance_of Person 
@@ -39,7 +39,26 @@ describe Person do
     end
   end
 
-  describe '#validate_name' do
+  describe '#can_use_services' do
+    context 'minors' do
 
+      it 'should not be allowed' do
+        person = Person.new(name: 'Rose', age: 17, parent_permission: false)
+        expect(person.can_use_services?).to be_falsey
+      end
+
+      it 'should be allowed only with parent permission' do
+        person = Person.new(name: 'Rose', age: 17, parent_permission: true)
+        expect(person.can_use_services?).to be_truthy
+      end
+    end
+
+    context 'adults' do
+      person = Person.new(name: 'Rose', age: 18, parent_permission: false)
+
+      it 'should be allowed without parent permission' do
+        expect(person.can_use_services?).to be_truthy
+      end
+    end
   end
 end
