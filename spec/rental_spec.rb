@@ -28,5 +28,11 @@ describe Rental do
         expect(person.rentals).to include(rental)
       end
     end
+
+    context '#book' do
+      it 'should have the correct rental' do
+        expect(book.rentals).to include(rental)
+      end
+    end
   end
 end
