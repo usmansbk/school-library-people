@@ -76,8 +76,8 @@ class Persistor
   end
 
   def persist(people:, rentals:, books:)
-    File.open('people.json', 'w') { |f| f.write JSON.generate(people) }
-    File.open('books.json', 'w') { |f| f.write JSON.generate(books) }
-    File.open('rentals.json', 'w') { |f| f.write JSON.generate(rentals) }
+    File.open('people.json', 'w') { |f| f.write JSON.generate(people) } unless people.empty?
+    File.open('books.json', 'w') { |f| f.write JSON.generate(books) } unless books.empty?
+    File.open('rentals.json', 'w') { |f| f.write JSON.generate(rentals) } unless rentals.empty?
   end
 end
