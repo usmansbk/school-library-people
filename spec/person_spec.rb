@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Person do
   before :each do
-    @person = Person.new(age: "17")
+    @person = Person.new(age: "17", name: "Roseling gandalf the gray")
   end
 
   describe '#new' do
@@ -37,5 +37,9 @@ describe Person do
         expect(person.parent_permission).to be_falsey
       end
     end
+  end
+
+  describe '#validate_name' do
+
   end
 end
