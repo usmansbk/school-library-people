@@ -8,7 +8,7 @@ describe Rental do
     rental = Rental.new('2020/04/12', book, person)
 
     it 'takes 3 parameters and returns a Rental object' do
-      expect(rental).to be_an_instance_of Rental 
+      expect(rental).to be_an_instance_of Rental
     end
 
     it 'should set the correct date' do
@@ -16,11 +16,11 @@ describe Rental do
     end
 
     it 'should set the correct person' do
-      expect(rental.person).to eq person 
+      expect(rental.person).to eq person
     end
 
     it 'should set the correct book' do
-      expect(rental.book).to eq book 
+      expect(rental.book).to eq book
     end
   end
 end

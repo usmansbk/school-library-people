@@ -7,13 +7,13 @@ describe Classroom do
 
   describe '#new' do
     it 'takes one parameter and returns a Classroom object' do
-      expect(@classroom).to be_an_instance_of Classroom 
+      expect(@classroom).to be_an_instance_of Classroom
     end
   end
 
   describe '#students' do
     it 'returns a has-many Student relationship' do
-      expect(@classroom).to have_attributes("students" => [])
+      expect(@classroom).to have_attributes('students' => [])
     end
   end
 

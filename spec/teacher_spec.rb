@@ -5,7 +5,7 @@ describe Teacher do
     teacher = Teacher.new(age: 48, specialization: 'Doctor')
 
     it 'takes 2 required parameters and returns a Teacher object' do
-      expect(teacher).to be_an_instance_of Teacher 
+      expect(teacher).to be_an_instance_of Teacher
     end
 
     it 'should always be allowed to use services' do

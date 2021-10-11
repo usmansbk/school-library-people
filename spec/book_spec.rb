@@ -13,7 +13,7 @@ describe Book do
 
   describe '#rentals' do
     it 'returns a has-many Rental relationship' do
-      expect(@book).to have_attributes("rentals" => [])
+      expect(@book).to have_attributes('rentals' => [])
     end
   end
 
